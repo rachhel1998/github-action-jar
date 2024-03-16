@@ -15,9 +15,8 @@ jobs:
           distribution: 'temurin'
           architecture: x64
           cache: maven
-          working-directory: FormDefinitionServiceLambda
-      - run: mvn --batch-mode --update-snapshots verify
-      - run: mkdir staging && cp target/*.jar staging
+      - run: cd FormDefinitionServiceLambda && mvn --batch-mode --update-snapshots verify
+      - run: mkdir staging && cp FormDefinitionServiceLambda/target/*.jar staging
       - uses: actions/upload-artifact@v4
         with:
           name: Package
