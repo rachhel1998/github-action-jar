@@ -15,8 +15,9 @@ jobs:
           distribution: 'temurin'
           architecture: x64
           cache: maven
-      - run: cd FormDefinitionServiceLambda && mvn --batch-mode --update-snapshots verify
-      - run: mkdir staging && cp FormDefinitionServiceLambda/target/*.jar staging
+      - run: mvn clean install
+      - run: cd FormDefinitionServiceLambda && mvn clean package shade:shade
+      - run: mkdir staging && cp FormDefinitionServiceLambda/target/FormDefinitionServiceLambda-1.0-SNAPSHOT-shaded.jar staging
       - uses: actions/upload-artifact@v4
         with:
           name: Package
