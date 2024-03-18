@@ -62,7 +62,7 @@ jobs:
         run: npm install
       - name: Check JAR File
         working-directory: FormDefinitionServiceLambda
-        run: ls -l
+        run: ls -l target
         
       - name: Deploy CDK stack (Bootstrap Project)
         working-directory: FormDefinitionServiceCdk
