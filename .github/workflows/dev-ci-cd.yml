@@ -23,6 +23,10 @@ jobs:
       - name: Install CDK CLI
         run: npm install -g aws-cdk
         
+      # Deploy using CDK (FormDefinitionServiceCdk)
+      - name: Install CDK Toolkit
+        uses: actions/checkout@v3
+        
       - name: Cache local Maven repository
         uses: actions/cache@v3
         with:
@@ -42,10 +46,6 @@ jobs:
 
       - name: Copy JAR file to staging directory
         run: cp /home/runner/work/github-action-jar/github-action-jar/FormDefinitionServiceLambda/target/FormDefinitionServiceLambda-*.jar staging/
-
-      # Deploy using CDK (FormDefinitionServiceCdk)
-      - name: Install CDK Toolkit
-        uses: actions/checkout@v3
 
       # Configure AWS credentials
       - name: Configure AWS credentials
