@@ -24,7 +24,7 @@ jobs:
             ${{ runner.os }}-maven-
       - run: cd FormDefinitionServiceLambda && mvn clean install
       - run: cd FormDefinitionServiceLambda && mvn clean package shade:shade
-      - run: mkdir staging && cp target/FormDefinitionServiceLambda-1.0-SNAPSHOT-shaded.jar staging
+      - run: mkdir staging && cp /home/runner/work/github-action-jar/github-action-jar/FormDefinitionServiceLambda/target/FormDefinitionServiceLambda-1.0-SNAPSHOT-shaded.jar staging
       - uses: actions/upload-artifact@v4
         with:
           name: Package
