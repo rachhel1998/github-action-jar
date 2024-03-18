@@ -21,27 +21,16 @@
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.1.1</version>
                 <configuration>
-                  <!--Create shaded JAR only-->
-                  <shadedArtifactAttached>false</shadedArtifactAttached>
-                  <!--Remove original replaced dependencies-->
-                  <createDependencyReducedPom>true</createDependencyReducedPom>
-                  <!--Promotes transitive dependencies of removed dependencies to direct-->
-                  <promoteTransitiveDependencies>true</promoteTransitiveDependencies>
-                  <relocations>
-                    <relocation>
-                      <pattern>com.fasterxml.jackson</pattern>
-                      <shadedPattern>org.example.shaded.com.fasterxml.jackson</shadedPattern>
-                    </relocation>
-                  </relocations>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                   <createDependencyReducedPom>false</createDependencyReducedPom>
+                 </configuration>
+                 <executions>
+                   <execution>
+                     <phase>package</phase>
+                     <goals>
+                       <goal>shade</goal>
+                     </goals>
+                   </execution>
+                 </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
