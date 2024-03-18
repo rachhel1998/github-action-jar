@@ -27,7 +27,7 @@ export class FormDefinitionServiceCdkStack extends cdk.Stack {
     });
 
     const lambdaFunction = new lambda.Function(this, 'FormDefinitionLambdaId', {
-      code: lambda.Code.fromAsset('../FormDefinitionServiceLambda/target/FormDefinitionServiceLambda-1.0-SNAPSHOT-shaded.jar'),
+      code: lambda.Code.fromAsset('../FormDefinitionServiceLambda/target/FormDefinitionServiceLambda-1.0-SNAPSHOT.jar'),
       handler: 'com.wazo.services.formdefinition.handler.LambdaMainHandler::handleRequest',
       runtime: lambda.Runtime.JAVA_11,
       memorySize: 2048,
