@@ -18,7 +18,11 @@ jobs:
           distribution: 'temurin'
           architecture: x64
           cache: maven
-
+          
+      # Install CDK CLI before deployment
+      - name: Install CDK CLI
+        run: npm install -g aws-cdk
+        
       - name: Cache local Maven repository
         uses: actions/cache@v3
         with:
