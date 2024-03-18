@@ -56,7 +56,7 @@ jobs:
           aws-region: "us-east-1"
 
       - name: Deploy CDK stack (dev environment)
-        run: cdk deploy DevStack -c environment=dev  # Replace DevStack with your stack name
+        run: cdk deploy  # Replace DevStack with your stack name
 
       - uses: actions/upload-artifact@v4
         with:
