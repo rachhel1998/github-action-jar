@@ -41,7 +41,7 @@ jobs:
 
       # Deploy using CDK (FormDefinitionServiceCdk)
       - name: Install CDK Toolkit
-        uses: aws-actions/aws-cdk@v3
+        uses: actions/checkout@v3
 
       - name: Configure AWS credentials (replace with your secret management)
         # Use AWS Secrets Manager or other secure method to store credentials
